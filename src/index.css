@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme inline {
@@ -36,6 +35,11 @@
     color: var(--color-background);
   }
 
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -49,6 +53,18 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-muted-foreground);
   }
+}
+
+/* Skip link: visible solo al recibir foco */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 1rem;
 }
 
 /* ---------- Animaciones SIGNAL ROOM ---------- */
@@ -131,7 +147,6 @@
   }
 }
 
-/* Radar: línea de barrido girando */
 .radar-sweep {
   position: absolute;
   inset: 0;
@@ -148,7 +163,6 @@
   animation: spin 20s linear infinite;
 }
 
-/* Badge de estado vivo */
 .pulse-dot {
   animation: pulse-dot 1.2s ease-in-out infinite;
 }
@@ -162,37 +176,31 @@
   animation: pulse-ring 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 
-/* Nombre del hero con micro-glitch de escaneo */
 .glitch {
   animation: glitch-shift 3s infinite;
 }
 
-/* Osciloscopio: onda que "fluye" */
 .oscilloscope {
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
   animation: dash-flow 6s linear infinite;
 }
 
-/* Líneas de conexión entre nodos de proyecto */
 .signal-flow {
   stroke-dasharray: 6 6;
   animation: dash-flow 1.6s linear infinite;
 }
 
-/* Línea ECG de la experiencia */
 .ecg-line {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
   animation: dash-flow 8s linear infinite;
 }
 
-/* Cursor de terminal */
 .term-cursor {
   animation: cursor-blink 1s step-end infinite;
 }
 
-/* Overlay CRT sutil */
 .crt-overlay {
   position: fixed;
   inset: 0;
@@ -204,4 +212,16 @@
   z-index: 50;
   pointer-events: none;
   opacity: 0.12;
+}
+
+/* Accesibilidad: reducir todas las animaciones si el usuario lo pide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
