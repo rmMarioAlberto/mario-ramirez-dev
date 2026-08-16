@@ -46,11 +46,11 @@ const es = {
     contact: "// CANAL ABIERTO",
   },
   stats: [
-    { label: "DISPOSITIVOS IoT", value: "50+", suffix: "concurrentes" },
-    { label: "CODE COVERAGE", value: ">80%", suffix: "constante" },
-    { label: "TESTS BACKEND", value: "243+", suffix: "passing" },
+    { label: "TESTS BACKEND", value: "565+", suffix: "tests · CI/CD" },
+    { label: "DISPOSITIVOS IoT", value: "50+", suffix: "en producción" },
+    { label: "LATENCIA", value: "<1.5s", suffix: "ping telemetría" },
     { label: "SEGURIDAD", value: "ISO 27001", suffix: "certificado" },
-    { label: "GPA", value: "9.54", suffix: "UTEQ" },
+    { label: "SEGURIDAD · APP", value: "OWASP ZAP", suffix: "+ SonarQube" },
   ],
   stack: [
     {
@@ -320,11 +320,11 @@ const en: typeof es = {
     contact: "// OPEN CHANNEL",
   },
   stats: [
-    { label: "IOT DEVICES", value: "50+", suffix: "concurrent" },
-    { label: "CODE COVERAGE", value: ">80%", suffix: "sustained" },
-    { label: "BACKEND TESTS", value: "243+", suffix: "passing" },
+    { label: "BACKEND TESTS", value: "565+", suffix: "tests · CI/CD" },
+    { label: "IOT DEVICES", value: "50+", suffix: "in production" },
+    { label: "LATENCY", value: "<1.5s", suffix: "telemetry ping" },
     { label: "SECURITY", value: "ISO 27001", suffix: "certified" },
-    { label: "GPA", value: "9.54", suffix: "UTEQ" },
+    { label: "SECURITY · APP", value: "OWASP ZAP", suffix: "+ SonarQube" },
   ],
   stack: [
     {
