@@ -30,11 +30,8 @@ const PROJECT_STATUS: Array<"prod" | "dev"> = [
   "dev",
   "prod",
   "prod",
+  "dev",
   "prod",
-  "prod",
-  "dev",
-  "dev",
-  "dev",
 ]
 const CONTACT_ICONS = [Mail, Code2, Globe, MapPin]
 const CONTACT_HREFS: Array<string | undefined> = [
@@ -329,9 +326,21 @@ function Projects({ t }: { t: Translations }) {
                 </span>
               ))}
             </div>
-            <div className="mt-5 pt-4 border-t border-border/60 flex items-center gap-2 font-mono text-xs">
-              <Zap size={13} className="text-accent" />
-              <span className="text-primary">{p.metric}</span>
+            <div className="mt-5 pt-4 border-t border-border/60 flex items-center justify-between gap-2 font-mono text-xs">
+              <span className="flex items-center gap-2">
+                <Zap size={13} className="text-accent" />
+                <span className="text-primary">{p.metric}</span>
+              </span>
+              {p.url ? (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 border border-primary/40 text-primary px-2 py-1 uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Globe size={12} /> visitar sitio ↗
+                </a>
+              ) : null}
             </div>
           </div>
         ))}
@@ -555,10 +564,10 @@ function Contact({ t }: { t: Translations }) {
               return (
                 <div
                   key={labels[i]}
-                  className="flex items-center gap-3 text-foreground/85"
+                  className="flex flex-wrap items-center gap-x-3 gap-y-1 text-foreground/85"
                 >
-                  <Icon size={13} className="text-primary/70" />
-                  <span className="text-muted-foreground text-xs w-12">
+                  <Icon size={13} className="text-primary/70 shrink-0" />
+                  <span className="text-muted-foreground text-xs w-12 shrink-0">
                     {labels[i]}
                   </span>
                   {href ? (
@@ -566,12 +575,12 @@ function Contact({ t }: { t: Translations }) {
                       href={href}
                       target={href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
-                      className="text-primary hover:text-accent transition-colors underline decoration-primary/30 underline-offset-4"
+                      className="text-primary hover:text-accent transition-colors underline decoration-primary/30 underline-offset-4 break-all"
                     >
                       {CONTACT_VALUES[i]}
                     </a>
                   ) : (
-                    <span>{CONTACT_VALUES[i]}</span>
+                    <span className="break-all">{CONTACT_VALUES[i]}</span>
                   )}
                 </div>
               )
