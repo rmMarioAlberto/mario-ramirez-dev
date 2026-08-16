@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-background: #050807;
+  --color-foreground: #e8f0ec;
+  --color-card: #0b0f0e;
+  --color-card-foreground: #e8f0ec;
+  --color-primary: #39ff88;
+  --color-primary-foreground: #050807;
+  --color-secondary: #0a140e;
+  --color-secondary-foreground: #39ff88;
+  --color-muted: #08110b;
+  --color-muted-foreground: #8a9490;
+  --color-accent: #ffb454;
+  --color-accent-foreground: #050807;
+  --color-border: #113322;
+  --color-ring: #39ff88;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    cursor: crosshair;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-background);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+    border-left: 1px solid var(--color-border);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted-foreground);
+  }
+}
+
+/* ---------- Animaciones SIGNAL ROOM ---------- */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-shift {
+  0%,
+  92%,
+  100% {
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  93% {
+    transform: translate(-2px, 1px);
+    clip-path: inset(10% 0 55% 0);
+  }
+  95% {
+    transform: translate(2px, -1px);
+    clip-path: inset(60% 0 5% 0);
+  }
+  97% {
+    transform: translate(-1px, 0);
+    clip-path: inset(30% 0 35% 0);
+  }
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Radar: línea de barrido girando */
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 70%,
+    rgba(57, 255, 136, 0.35) 100%
+  );
+  animation: spin 4s linear infinite;
+}
+
+.radar-ring {
+  animation: spin 20s linear infinite;
+}
+
+/* Badge de estado vivo */
+.pulse-dot {
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+
+.pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--color-primary);
+  animation: pulse-ring 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Nombre del hero con micro-glitch de escaneo */
+.glitch {
+  animation: glitch-shift 3s infinite;
+}
+
+/* Osciloscopio: onda que "fluye" */
+.oscilloscope {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: dash-flow 6s linear infinite;
+}
+
+/* Líneas de conexión entre nodos de proyecto */
+.signal-flow {
+  stroke-dasharray: 6 6;
+  animation: dash-flow 1.6s linear infinite;
+}
+
+/* Línea ECG de la experiencia */
+.ecg-line {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: dash-flow 8s linear infinite;
+}
+
+/* Cursor de terminal */
+.term-cursor {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* Overlay CRT sutil */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.12;
+}

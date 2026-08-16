@@ -1,0 +1,5 @@
+# ponytail: pnpm@10.34.3 pierde evidencia de confianza (10.20.0 la tiene).
+# Exclusion estrecha tras revisión manual, según guía de trust de mise.
+[tools]
+node = "22"
+"npm:pnpm" = { version = "10.34.3", trust_policy_excludes = ["pnpm@10.34.3"] }
