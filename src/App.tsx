@@ -39,7 +39,7 @@ const CONTACT_HREFS: Array<string | undefined> = [
   "mailto:rmmarioalberto08@gmail.com",
   "https://github.com/rmMarioAlberto",
   "https://linkedin.com/in/mario-alberto-ramirez-martinez-12215b34a",
-  "https://drive.google.com/file/d/1T3Bj1RVBo6pVytLFq9Fr1N6AZxXqGucX/view?usp=sharing",
+  "https://drive.google.com/file/d/1XUvlwIaWhHsyBBboTv0JflLNvYHx5uDy/view?usp=sharing",
   undefined,
 ]
 const CONTACT_VALUES = [
