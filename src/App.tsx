@@ -4,6 +4,7 @@ import {
   Code2,
   Cpu,
   Crosshair,
+  FileText,
   Globe,
   GraduationCap,
   Lock,
@@ -25,25 +26,27 @@ import { translations, type Lang, type Translations } from "./i18n"
 
 const STAT_ICONS = [Radio, Activity, TerminalSquare, Lock, GraduationCap]
 const PROJECT_STATUS: Array<"prod" | "dev"> = [
-  "prod",
   "dev",
   "dev",
   "prod",
   "prod",
   "dev",
+  "prod",
   "prod",
 ]
-const CONTACT_ICONS = [Mail, Code2, Globe, MapPin]
+const CONTACT_ICONS = [Mail, Code2, Globe, FileText, MapPin]
 const CONTACT_HREFS: Array<string | undefined> = [
   "mailto:rmmarioalberto08@gmail.com",
   "https://github.com/rmMarioAlberto",
   "https://linkedin.com/in/mario-alberto-ramirez-martinez-12215b34a",
+  "https://drive.google.com/file/d/1T3Bj1RVBo6pVytLFq9Fr1N6AZxXqGucX/view?usp=sharing",
   undefined,
 ]
 const CONTACT_VALUES = [
   "rmmarioalberto08@gmail.com",
   "github.com/rmMarioAlberto",
   "linkedin.com/in/mario-alberto-ramirez",
+  "CV · Google Drive",
   "Querétaro, México",
 ]
 
