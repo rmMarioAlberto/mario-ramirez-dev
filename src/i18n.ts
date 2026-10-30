@@ -4,7 +4,7 @@ const es = {
   meta: {
     title: "Alberto Ramírez — Backend & IoT Developer | Querétaro, MX",
     description:
-      "Desarrollador backend e IoT en Querétaro. Experiencia con NestJS, MQTT, servidores físicos, despliegues en VPS y MIOTY. Disponible para estadía profesional de enero a abril de 2027.",
+      "Desarrollador backend e IoT en Querétaro. Experiencia con NestJS, MQTT, servidores físicos, despliegues en VPS y MIOTY.",
     ogTitle: "Alberto Ramírez — Backend & IoT Developer",
     ogDescription:
       "SIGNAL ROOM: proyectos de backend e IoT, despliegues con NestJS, MQTT, Docker y MIOTY.",
@@ -12,9 +12,9 @@ const es = {
   ui: {
     sysOnline: "SYS_ONLINE",
     signalRoom: "SIGNAL ROOM · a.ramírez",
-    availability: "ESTADÍA · ENE–ABR 2027",
+    availability: "SISTEMAS CONECTADOS",
     secTag: "SEC:27001",
-    openToWork: "DISPONIBLE · ESTADÍA PROFESIONAL",
+    openToWork: "BACKEND · IoT",
     ctaConnect: "> conectar",
     ctaSignal: "ver señal ↓",
     footerStart: "// FIN DE TRANSMISIÓN",
@@ -27,7 +27,7 @@ const es = {
     lastName: "Ramírez",
     tagline: "Backend & IoT Developer · Querétaro, MX",
     blurb:
-      "Desarrollo backend y sistemas conectados, desde APIs hasta telemetría MQTT en dispositivos IoT. Busco una estadía profesional de enero a abril de 2027.",
+      "Desarrollo servicios backend y sistemas conectados, desde APIs hasta telemetría MQTT para dispositivos IoT.",
   },
   sectionTitles: {
     stack: "Stack",
@@ -92,6 +92,30 @@ const es = {
       desc: "Plataforma en desarrollo para emergencias rurales que busca conectar solicitudes de ayuda con equipos de respuesta, compartir la ubicación de las personas y facilitar el seguimiento de cada incidente.",
       stack: ["Java", "Spring Boot", "React", "React Native", "MIOTY", "PostGIS"],
       metric: "alertas · ubicación · seguimiento",
+    },
+    {
+      name: "Linkore Solutions",
+      domain: "Archivo · servicios digitales",
+      role: "Iniciativa personal",
+      desc: "Iniciativa para crear soluciones digitales para clientes, combinando desarrollo web, IoT y marketing digital según las necesidades de cada proyecto.",
+      stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Meta Ads"],
+      metric: "software · IoT · marketing digital",
+    },
+    {
+      name: "VozRural",
+      domain: "Archivo · hackathon de salud",
+      role: "Backend · Hackathon Troyano",
+      desc: "Propuesta de telemedicina para comunidades rurales con interacción por voz y WhatsApp. Incluyó una prueba de concepto de wearable con GPS para compartir la ubicación de la persona.",
+      stack: ["Node.js", "ESP32", "WhatsApp"],
+      metric: "telemedicina · ubicación",
+    },
+    {
+      name: "Lettucecurity",
+      domain: "Archivo · agricultura e IA",
+      role: "Prototipo de monitoreo agrícola",
+      desc: "Prototipo que exploró la identificación visual de plagas y el pronóstico de condiciones ambientales para apoyar el monitoreo de cultivos.",
+      stack: ["NestJS", "TensorFlow", "React", "MQTT"],
+      metric: "cultivos · visión artificial",
     },
   ],
   experience: [
@@ -168,7 +192,7 @@ const es = {
     label: "alberto@dev:~",
     command: "contact --connect",
     cta: "iniciar transmisión",
-    note: "Querétaro, México · Disponible para estadía ene–abr 2027",
+    note: "Querétaro, México · Backend e IoT",
   },
 }
 
@@ -176,7 +200,7 @@ const en: typeof es = {
   meta: {
     title: "Alberto Ramírez — Backend & IoT Developer | Querétaro, MX",
     description:
-      "Backend and IoT developer in Querétaro, Mexico. Experience with NestJS, MQTT, physical servers, VPS deployments and MIOTY. Available for a professional internship from January to April 2027.",
+      "Backend and IoT developer in Querétaro, Mexico. Experience with NestJS, MQTT, physical servers, VPS deployments and MIOTY.",
     ogTitle: "Alberto Ramírez — Backend & IoT Developer",
     ogDescription:
       "SIGNAL ROOM: backend and IoT projects deployed with NestJS, MQTT, Docker and MIOTY.",
@@ -184,9 +208,9 @@ const en: typeof es = {
   ui: {
     sysOnline: "SYS_ONLINE",
     signalRoom: "SIGNAL ROOM · a.ramírez",
-    availability: "INTERNSHIP · JAN–APR 2027",
+    availability: "CONNECTED SYSTEMS",
     secTag: "SEC:27001",
-    openToWork: "AVAILABLE · INTERNSHIP JAN–APR 2027",
+    openToWork: "BACKEND · IoT",
     ctaConnect: "> connect",
     ctaSignal: "view signal ↓",
     footerStart: "// END OF TRANSMISSION",
@@ -199,7 +223,7 @@ const en: typeof es = {
     lastName: "Ramírez",
     tagline: "Backend & IoT Developer · Querétaro, MX",
     blurb:
-      "I build backend services and connected systems, from APIs to MQTT telemetry on IoT devices. Seeking a professional internship from January to April 2027.",
+      "I build backend services and connected systems, from APIs to MQTT telemetry for IoT devices.",
   },
   sectionTitles: {
     stack: "Stack",
@@ -264,6 +288,30 @@ const en: typeof es = {
       desc: "Rural emergency-response platform designed to connect requests for help with response teams, share people’s locations, and support follow-up on each incident.",
       stack: ["Java", "Spring Boot", "React", "React Native", "MIOTY", "PostGIS"],
       metric: "alerts · location · follow-up",
+    },
+    {
+      name: "Linkore Solutions",
+      domain: "Archive · digital services",
+      role: "Personal initiative",
+      desc: "An initiative to build digital solutions for clients, combining web development, IoT, and digital marketing based on each project’s needs.",
+      stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Meta Ads"],
+      metric: "software · IoT · digital marketing",
+    },
+    {
+      name: "VozRural",
+      domain: "Archive · healthcare hackathon",
+      role: "Backend · Hackathon Troyano",
+      desc: "A telemedicine concept for rural communities using voice interaction and WhatsApp. It included a GPS wearable proof of concept to share a person’s location.",
+      stack: ["Node.js", "ESP32", "WhatsApp"],
+      metric: "telemedicine · location",
+    },
+    {
+      name: "Lettucecurity",
+      domain: "Archive · agriculture & AI",
+      role: "Agricultural monitoring prototype",
+      desc: "A prototype exploring visual pest identification and environmental forecasting to support crop monitoring.",
+      stack: ["NestJS", "TensorFlow", "React", "MQTT"],
+      metric: "crops · computer vision",
     },
   ],
   experience: [
@@ -340,7 +388,7 @@ const en: typeof es = {
     label: "alberto@dev:~",
     command: "contact --connect",
     cta: "start transmission",
-    note: "Querétaro, Mexico · Available Jan–Apr 2027",
+    note: "Querétaro, Mexico · Backend & IoT",
   },
 }
 

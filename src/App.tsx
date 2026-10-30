@@ -24,12 +24,28 @@ import { translations, type Lang, type Translations } from "./i18n"
 /* ------------------------------------------------------------------ */
 
 const STAT_ICONS = [Activity, Network, Radio, GraduationCap]
-const PROJECT_STATUS: Array<"prod" | "dev"> = [
-  "prod",
-  "prod",
-  "prod",
-  "dev",
+const PROJECT_STATUS = {
+  PROD: "prod",
+  DEV: "dev",
+  ARCHIVE: "archive",
+} as const
+type ProjectStatus = (typeof PROJECT_STATUS)[keyof typeof PROJECT_STATUS]
+const PROJECT_STATUSES: ProjectStatus[] = [
+  PROJECT_STATUS.PROD,
+  PROJECT_STATUS.PROD,
+  PROJECT_STATUS.PROD,
+  PROJECT_STATUS.DEV,
+  PROJECT_STATUS.ARCHIVE,
+  PROJECT_STATUS.ARCHIVE,
+  PROJECT_STATUS.ARCHIVE,
 ]
+const PROJECT_STATUS_COLORS: Record<ProjectStatus, string> = {
+  [PROJECT_STATUS.PROD]: "bg-primary",
+  [PROJECT_STATUS.DEV]: "bg-accent",
+  [PROJECT_STATUS.ARCHIVE]: "bg-muted-foreground",
+}
+const getProjectStatus = (index: number) =>
+  PROJECT_STATUSES[index] ?? PROJECT_STATUS.ARCHIVE
 const CONTACT_ICONS = [Mail, Code2, Globe, FileText, MapPin]
 const CONTACT_HREFS: Array<string | undefined> = [
   "mailto:rmmarioalberto08@gmail.com",
@@ -289,14 +305,16 @@ function Projects({ t }: { t: Translations }) {
               <div className="flex items-center gap-3">
                 <span
                   className={`relative flex w-2 h-2 ${
-                    PROJECT_STATUS[i] === "prod" ? "bg-primary" : "bg-accent"
+                    PROJECT_STATUS_COLORS[getProjectStatus(i)]
                   } rounded-full`}
                 >
-                  <span
-                    className={`pulse-dot absolute inline-flex w-full h-full rounded-full ${
-                      PROJECT_STATUS[i] === "prod" ? "bg-primary" : "bg-accent"
-                    }`}
-                  />
+                  {getProjectStatus(i) !== PROJECT_STATUS.ARCHIVE ? (
+                    <span
+                      className={`pulse-dot absolute inline-flex w-full h-full rounded-full ${
+                        PROJECT_STATUS_COLORS[getProjectStatus(i)]
+                      }`}
+                    />
+                  ) : null}
                 </span>
                 <span className="font-mono text-[10px] tracking-widest text-muted-foreground">
                   {p.domain}

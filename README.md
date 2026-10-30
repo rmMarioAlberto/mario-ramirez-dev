@@ -6,7 +6,7 @@ Portafolio bilingüe (español e inglés) con estética de sala de control para 
 
 ## Perfil
 
-Desarrollador de software enfocado en backend y sistemas conectados, desde servicios web hasta telemetría MQTT. Estudiante de Ingeniería en Desarrollo y Gestión de Software en UTEQ, con graduación prevista para abril de 2027. Disponible para estadía profesional de enero a abril de 2027.
+Desarrollador de software enfocado en backend y sistemas conectados, desde servicios web hasta telemetría MQTT. Estudiante de Ingeniería en Desarrollo y Gestión de Software en UTEQ, con graduación prevista para abril de 2027.
 
 ## Trabajo seleccionado
 
@@ -16,6 +16,9 @@ Desarrollador de software enfocado en backend y sistemas conectados, desde servi
 | IMOX Cloud | Telemetría MQTT para 50+ dispositivos concurrentes a intervalos de 1.5 s, desplegada con Docker en servidor físico de recursos limitados; la validación de timestamps ayudó a evitar falsas desconexiones. |
 | Fitness Gym | Sistema serverless de membresías, acceso QR, inventario y reportes para 150+ miembros. |
 | GeoCESAR | Plataforma en desarrollo para emergencias rurales que conecta solicitudes de ayuda con equipos de respuesta, comparte ubicación y facilita el seguimiento de incidentes. |
+| Linkore Solutions | Iniciativa personal de soluciones digitales que combina desarrollo web, IoT y marketing digital. |
+| VozRural | Proyecto de hackathon sobre telemedicina rural por voz y WhatsApp; incluyó una prueba de concepto de wearable con GPS. |
+| Lettucecurity | Prototipo agrícola que exploró la detección visual de plagas y el pronóstico de condiciones ambientales. |
 
 ## ES — Sobre el sitio
 
