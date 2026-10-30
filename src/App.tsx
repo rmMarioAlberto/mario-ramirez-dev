@@ -7,7 +7,6 @@ import {
   FileText,
   Globe,
   GraduationCap,
-  Lock,
   Mail,
   MapPin,
   Network,
@@ -24,29 +23,26 @@ import { translations, type Lang, type Translations } from "./i18n"
 /* ESTRUCTURA NO TRADUCIBLE (iconos, estados, enlaces)                 */
 /* ------------------------------------------------------------------ */
 
-const STAT_ICONS = [Radio, Activity, TerminalSquare, Lock, GraduationCap]
+const STAT_ICONS = [Activity, Network, Radio, GraduationCap]
 const PROJECT_STATUS: Array<"prod" | "dev"> = [
+  "prod",
+  "prod",
+  "prod",
   "dev",
-  "dev",
-  "prod",
-  "prod",
-  "dev",
-  "prod",
-  "prod",
 ]
 const CONTACT_ICONS = [Mail, Code2, Globe, FileText, MapPin]
 const CONTACT_HREFS: Array<string | undefined> = [
   "mailto:rmmarioalberto08@gmail.com",
   "https://github.com/rmMarioAlberto",
   "https://linkedin.com/in/mario-alberto-ramirez-martinez-12215b34a",
-  "https://drive.google.com/file/d/1XUvlwIaWhHsyBBboTv0JflLNvYHx5uDy/view?usp=sharing",
+  "/cv-es.pdf",
   undefined,
 ]
 const CONTACT_VALUES = [
   "rmmarioalberto08@gmail.com",
   "github.com/rmMarioAlberto",
   "linkedin.com/in/mario-alberto-ramirez",
-  "CV · Google Drive",
+  "PDF",
   "Querétaro, México",
 ]
 
@@ -160,7 +156,7 @@ function Hero({ t }: { t: Translations }) {
 
 function Telemetry({ t }: { t: Translations }) {
   return (
-    <section className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 font-mono">
+    <section className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 font-mono">
       {t.stats.map((stat, i) => {
         const Icon = STAT_ICONS[i]
         return (
@@ -488,7 +484,7 @@ function Education({ t }: { t: Translations }) {
               </h3>
               <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-muted-foreground">
                 <span>{e.period}</span>
-                <span className="text-primary">{e.note} · GPA 9.54</span>
+                <span className="text-primary">{e.note}</span>
               </div>
             </div>
           </div>
@@ -498,7 +494,7 @@ function Education({ t }: { t: Translations }) {
   )
 }
 
-function Contact({ t }: { t: Translations }) {
+function Contact({ t, lang }: { t: Translations; lang: Lang }) {
   const [visible, setVisible] = useState(0)
   const [typed, setTyped] = useState("")
 
@@ -563,7 +559,12 @@ function Contact({ t }: { t: Translations }) {
             </div>
             {Array.from({ length: visible }).map((_, i) => {
               const Icon = CONTACT_ICONS[i]
-              const href = CONTACT_HREFS[i]
+              const href =
+                i === 3
+                  ? lang === "es"
+                    ? "/cv-es.pdf"
+                    : "/cv-en.pdf"
+                  : CONTACT_HREFS[i]
               return (
                 <div
                   key={labels[i]}
@@ -664,7 +665,7 @@ export default function App() {
           </span>
           <div className="flex gap-4">
             <span className="flex items-center gap-2">
-              <Zap size={14} className="text-primary" /> {t.ui.uptime}
+              <Zap size={14} className="text-primary" /> {t.ui.availability}
             </span>
             <span className="flex items-center gap-2 text-accent">
               <ShieldAlert size={14} /> {t.ui.secTag}
@@ -703,7 +704,7 @@ export default function App() {
         <Experience t={t} />
         <Achievements t={t} />
         <Education t={t} />
-        <Contact t={t} />
+        <Contact t={t} lang={lang} />
       </main>
 
       <footer className="border-t border-border mt-16 p-4 text-center font-mono text-xs text-muted-foreground z-10 bg-background relative">

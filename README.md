@@ -1,102 +1,49 @@
 # SIGNAL ROOM — Portfolio de Alberto Ramírez
 
-[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white)](https://nestjs.com)
-[![MQTT](https://img.shields.io/badge/MQTT-39FF88?logo=mqtt&logoColor=black)](https://mqtt.org)
-[![ISO/IEC 27001](https://img.shields.io/badge/ISO%2FIEC%2027001-Security-FFB454)](https://www.iso.org/standard/27001)
+Portafolio bilingüe (español e inglés) con estética de sala de control para mostrar trabajo en backend, IoT y sistemas conectados.
 
-> Portfolio personal con estética de **centro de control de telemetría IoT**:
-> radar, osciloscopio, mapa de señal de proyectos y terminal de contacto.
-> Personal portfolio with an **IoT telemetry control room** aesthetic.
+**Sitio:** [mario-ramirez.dev](https://mario-ramirez.dev) · **GitHub:** [rmMarioAlberto](https://github.com/rmMarioAlberto)
 
-**Live site:** [mario-ramirez.dev](https://mario-ramirez.dev) · **Perfil:** [github.com/rmMarioAlberto](https://github.com/rmMarioAlberto)
+## Perfil
 
-![Captura del hero](public/og-image.png)
+Desarrollador de software enfocado en backend y sistemas conectados, desde servicios web hasta telemetría MQTT. Estudiante de Ingeniería en Desarrollo y Gestión de Software en UTEQ, con graduación prevista para abril de 2027. Disponible para estadía profesional de enero a abril de 2027.
 
----
+## Trabajo seleccionado
 
-## ES — Acerca de
+| Proyecto | Evidencia y estado |
+|---|---|
+| CEQ Marketplace | Liderazgo técnico de un equipo de cuatro; marketplace B2B desplegado en VPS. La landing es pública; las funciones requieren autenticación. |
+| IMOX Cloud | Telemetría MQTT para 50+ dispositivos concurrentes a intervalos de 1.5 s, desplegada con Docker en servidor físico de recursos limitados; la validación de timestamps ayudó a evitar falsas desconexiones. |
+| Fitness Gym | Sistema serverless de membresías, acceso QR, inventario y reportes para 150+ miembros. |
+| GeoCESAR | Plataforma en desarrollo para emergencias rurales que conecta solicitudes de ayuda con equipos de respuesta, comparte ubicación y facilita el seguimiento de incidentes. |
 
-Soy **Alberto Ramírez**, Backend Developer e IoT Engineer de Querétaro, México. Este sitio es mi
-SIGNAL ROOM: cada sección es un instrumento de un centro de control.
+## ES — Sobre el sitio
 
-- **Hero / radar** — identidad y estado (OPEN TO WORK)
-- **Telemetría** — métricas reales: 50+ dispositivos IoT, >80% coverage, 243+ tests, ISO 27001, GPA 9.54
-- **Stack** — panel de instrumentos con 7 categorías
-- **Mapa de señal** — 10 proyectos reales como nodos de red (IMOX Cloud flagship)
-- **Trayectoria** — línea de tiempo ECG: Fitness Gym, Yex Acoustics (Imox Cloud), Atlas Copco
-- **Logros** — Fraunhofer IIS (MIOTY), NASA Space Apps, Fin 4 All, IEEE UTEQ
-- **Contacto** — terminal con typing animation
+SIGNAL ROOM organiza el perfil en ocho secciones: identidad, métricas contextualizadas, stack, proyectos, experiencia, certificación, educación y contacto. La sección de proyectos distingue sistemas desplegados de prototipos.
 
-**Switch de idioma:** el header alterna ES/EN; se persiste en `localStorage` y actualiza
-`lang`, `title` y meta description/OG dinámicos.
+## EN — About the site
 
-## EN — About
+SIGNAL ROOM presents the profile in eight sections: identity, contextualized metrics, stack, projects, experience, certification, education, and contact. Project cards distinguish deployed systems from prototypes.
 
-I'm **Alberto Ramírez**, a Backend Developer and IoT Engineer from Querétaro, Mexico. This site is
-my SIGNAL ROOM: every section is an instrument in a control center.
-
-- **Hero / radar** — identity and status (OPEN TO WORK)
-- **Telemetry** — real metrics: 50+ IoT devices, >80% coverage, 243+ tests, ISO 27001, GPA 9.54
-- **Stack** — 7-category instrument panel
-- **Signal map** — 10 real projects as network nodes (IMOX Cloud flagship)
-- **Track record** — ECG timeline: Fitness Gym, Yex Acoustics (Imox Cloud), Atlas Copco
-- **Achievements** — Fraunhofer IIS (MIOTY), NASA Space Apps, Fin 4 All, IEEE UTEQ
-- **Contact** — terminal with typing animation
-
-**Language switch:** the header toggles ES/EN; persisted in `localStorage` and updates
-`lang`, `title` and dynamic meta description/OG.
-
----
-
-## Stack
+## Implementación
 
 | Capa | Tecnologías |
 |---|---|
-| Frontend | React 19, Vite 8, TypeScript, Tailwind CSS v4, lucide-react |
-| Backend (perfil) | NestJS, Node.js, Spring Boot, FastAPI |
-| IoT (perfil) | MQTT, ESP32, LoRaWAN, MIOTY, Arduino |
-| DevOps (perfil) | Docker, GitHub Actions, SonarQube, OWASP ZAP |
+| Frontend | React, TypeScript, Vite, Tailwind CSS |
+| Portfolio data | `src/i18n.ts` — traducciones y contenido ES/EN |
+| Layout and sections | `src/App.tsx` |
+| Styles and motion | `src/index.css` |
+| Metadata | `index.html` — Open Graph, Twitter Cards y JSON-LD |
+| CV downloads | `public/cv-es.pdf` and `public/cv-en.pdf` |
 
-## Correr localmente / Run locally
+## Desarrollo local
 
 ```bash
-mise install          # node 22 + pnpm (mise)
+mise install
 pnpm install
-pnpm dev              # http://localhost:8443
-pnpm build            # typecheck + build de producción
-pnpm preview          # sirve dist/
-pnpm format           # oxfmt (solo src/, vite.config.ts, index.html)
+pnpm dev
 ```
 
-## Estructura / Structure
+Otros comandos disponibles: `pnpm build`, `pnpm preview` y `pnpm format`.
 
-```
-src/
-├── i18n.ts        # Traducciones ES/EN (type-checked) — toda la data del portfolio
-├── App.tsx        # 8 secciones: Hero, Telemetría, Stack, Proyectos, Experiencia, Logros, Educación, Contacto
-├── index.css      # Tokens SIGNAL ROOM + animaciones + reduced-motion
-└── main.tsx       # Entrypoint React
-public/
-├── favicon.svg/.png, apple-touch-icon.png, og-image.png
-├── robots.txt
-└── sitemap.xml
-plans/signal-room.md   # Concepto de diseño original
-```
-
-## SEO
-
-- Meta completo: title/description, canonical, robots, theme-color
-- Open Graph + Twitter Cards con `og-image.png` (1200×630)
-- JSON-LD `Person` (sameAs → GitHub/LinkedIn, almaMater UTEQ, knowsAbout)
-- `robots.txt` + `sitemap.xml`
-- Semantic HTML (1×h1, h2 por sección, `lang` dinámico)
-- Accesibilidad: `prefers-reduced-motion`, skip-link, foco visible
-
-## Deploy
-
-Vercel + dominio `mario-ramirez.dev` con Cloudflare por delante.
-`vercel.json` aplica security headers y caché immutable para `/assets/`.
+El sitio respeta `prefers-reduced-motion`, incluye skip-link y foco visible. El despliegue existente usa Vercel con el dominio `mario-ramirez.dev`.
